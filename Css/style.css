@@ -29,7 +29,9 @@ section {
 }
 
 .message {
-  display: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   font-size: large;
   backdrop-filter: blur(10px);
   background: linear-gradient(transparent, black);
@@ -70,10 +72,27 @@ section {
       }
     }
   }
+  & .audio_one, .audio_ones {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 10px;
+    height: 10px;
+    cursor: pointer;
+    border-radius: 50%;
+    font-size: larger;
+    font-weight: bolder;
+    padding: 5px;
+    text-align: start;
+    padding: 10px 10px;
+    color: rgb(0, 0, 0);
+    text-shadow: 0 0 10px rgb(134, 134, 134);
+  }
 }
 
 .oneflower {
-    position: relative;
+  display: none;
+  position: relative;
   backdrop-filter: blur(10px);
   background: linear-gradient(transparent, black);
   background-image: url("/assets/sadflower.jpg");
@@ -94,7 +113,24 @@ section {
     font-weight: bolder;
   }
 
-  & a{
+  & .audio {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 10px;
+    height: 10px;
+    cursor: pointer;
+    border-radius: 50%;
+    font-size: larger;
+    font-weight: bolder;
+    padding: 5px;
+    text-align: start;
+    padding: 10px 10px;
+    color: rgb(0, 0, 0);
+    text-shadow: 0 0 10px rgb(134, 134, 134);
+  }
+
+  & a {
     cursor: pointer;
     text-decoration: none;
     color: aliceblue;
@@ -105,6 +141,10 @@ section {
       color: #000000;
     }
   }
+}
+
+.flowers {
+  display: none;
 }
 
 /* Nueva animación para el efecto de máquina de escribir */
@@ -156,5 +196,4 @@ section {
   100% {
     filter: grayscale(100%);
   }
-    
 }
