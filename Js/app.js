@@ -26,7 +26,7 @@ for (let i = 0; i < 86; i++) {
 
   img.setAttribute(
     "style",
-    `position: absolute; width:${Math.floor(Math.random() * 300)}px; bottom:${Math.floor(Math.random() * 50) + 1}px; right:${Math.floor(Math.random() * 100) + 1}%; left:${(Math.floor(
+    `position: absolute; width:${Math.floor(Math.random() * 300)}px; bottom:${Math.floor(Math.random() * 10) + 1}px; right:${Math.floor(Math.random() * 100) + 1}%; left:${(Math.floor(
       Math.random() * 100)+1
     )}%;`
   );
