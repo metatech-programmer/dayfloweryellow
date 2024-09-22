@@ -1,0 +1,160 @@
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+  background-color: #1c1c1c;
+  height: 100dvh;
+  max-width: 100dvw;
+  overflow: hidden;
+  background-image: url("/assets/stars.gif");
+  background-size: cover;
+  background-attachment: fixed;
+}
+body::-webkit-scrollbar {
+  display: none;
+}
+section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  scrollbar-width: none;
+  color: #dddd2c;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.message {
+  display: none;
+  font-size: large;
+  backdrop-filter: blur(10px);
+  background: linear-gradient(transparent, black);
+
+  & h1 {
+    font-weight: bolder;
+    color: aliceblue;
+    text-transform: uppercase;
+    text-shadow: 0 0 10px rgb(134, 134, 134);
+    font-size: xx-large;
+  }
+  & .text {
+    animation: typing 6s steps(70, end), blink-caret 0.75s step-end infinite;
+    white-space: nowrap;
+    overflow: hidden;
+    text-shadow: 0 0 5px rgb(243, 212, 38);
+  }
+  & .buttons {
+    display: none;
+    animation-delay: 8s;
+    text-shadow: 0px 0px 10px rgb(184, 184, 184);
+    & button {
+      background-color: transparent;
+      border: 1px solid #dddd2c;
+      color: aliceblue;
+      border-radius: 15px;
+      padding: 12px;
+      margin: 10px;
+      font-weight: bolder;
+      font-size: large;
+      cursor: pointer;
+      text-shadow: 0px 0px 10px rgb(184, 184, 184);
+      text-transform: uppercase;
+      &:hover {
+        background-color: #dddd2c;
+        color: black;
+        border: 1px solid #6ddd2c;
+      }
+    }
+  }
+}
+
+.oneflower {
+    position: relative;
+  backdrop-filter: blur(10px);
+  background: linear-gradient(transparent, black);
+  background-image: url("/assets/sadflower.jpg");
+  background-size: contain;
+  background-position: center;
+  animation: animationFlower 20s forwards;
+
+  & img {
+    width: 100%;
+  }
+
+  & p {
+    position: absolute;
+    bottom: 0;
+    color: aliceblue;
+    text-shadow: 0 0 10px rgb(134, 134, 134);
+    font-size: xx-large;
+    font-weight: bolder;
+  }
+
+  & a{
+    cursor: pointer;
+    text-decoration: none;
+    color: aliceblue;
+    text-shadow: 0 0 10px rgb(134, 134, 134);
+    font-weight: bolder;
+    font-size: xx-large;
+    &:hover {
+      color: #000000;
+    }
+  }
+}
+
+/* Nueva animación para el efecto de máquina de escribir */
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blink-caret {
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: #dddd2c;
+  }
+}
+@keyframes animationBacground {
+  0% {
+    background: linear-gradient(black, transparent);
+  }
+  50% {
+    background: linear-gradient(transparent, black);
+  }
+
+  100% {
+    background: linear-gradient(black, transparent);
+  }
+}
+
+@keyframes aparicion {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 100%;
+  }
+}
+
+@keyframes animationFlower {
+  0% {
+    filter: grayscale(0%);
+  }
+  100% {
+    filter: grayscale(100%);
+  }
+    
+}
