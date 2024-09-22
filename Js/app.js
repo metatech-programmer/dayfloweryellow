@@ -12,10 +12,10 @@ const sectionMessage = document.querySelector(".message");
 const btnOneFlower = document.querySelector("#oneFlower");
 const btnFlowersC = document.querySelector("#flowersC");
 const happyFlowers = document.querySelectorAll(".happyFlowers");
-const btnNextSad = document.querySelector(".btnNextSad")
-const textCaminoSad = document.querySelector(".camino_sad")
-const textCaminoHappy = document.querySelector(".camino_happy")
-const imgRamo = document.querySelector(".ramoHappy")
+const btnNextSad = document.querySelector(".btnNextSad");
+const textCaminoSad = document.querySelector(".camino_sad");
+const textCaminoHappy = document.querySelector(".camino_happy");
+const imgRamo = document.querySelector(".ramoHappy");
 
 for (let i = 0; i < 86; i++) {
   const img = document.createElement("img");
@@ -26,9 +26,11 @@ for (let i = 0; i < 86; i++) {
 
   img.setAttribute(
     "style",
-    `position: absolute; width:${Math.floor(Math.random() * 300)}px; bottom:${Math.floor(Math.random() * 10) + 1}px; right:${Math.floor(Math.random() * 100) + 1}%; left:${(Math.floor(
-      Math.random() * 100)+1
-    )}%;`
+    `position: absolute; width:${Math.floor(Math.random() * 300)}px; bottom:${
+      Math.floor(Math.random() * 10) + 1
+    }px; right:${Math.floor(Math.random() * 100) + 1}%; left:${
+      Math.floor(Math.random() * 100) + 1
+    }%;`
   );
 }
 
@@ -37,7 +39,7 @@ btnaudio.addEventListener("click", () => {
 });
 
 btnAudioOne.addEventListener("click", () => {
-  audioT.stop();
+  audioT.pause();
 });
 btnAudioOnes.addEventListener("click", () => {
   audioT.play();
@@ -46,15 +48,19 @@ btnAudioHappy.addEventListener("click", () => {
   audioF.play();
 });
 
-
+sectionMessage.addEventListener("click", () => {
+  audioT.play();
+});
+sectionMessage.addEventListener("mouseover", () => {
+  audioT.play();
+});
 window.addEventListener("load", () => {
   btnAudioOnes.click();
-  textCaminoHappy.setAttribute("style", "display: none;")
-  textCaminoSad.setAttribute("style", "display: none;")
-  imgRamo.setAttribute("style", "display: none;")
+  textCaminoHappy.setAttribute("style", "display: none;");
+  textCaminoSad.setAttribute("style", "display: none;");
+  imgRamo.setAttribute("style", "display: none;");
   audioF.pause();
 });
-
 
 setTimeout(() => {
   sectionButtons.setAttribute(
@@ -70,58 +76,42 @@ btnOneFlower.addEventListener("click", () => {
     "display: flex; animation: animationFlower 20s forwards"
   );
   btnaudio.click();
-  sectionMessage.setAttribute(
-    "style",
-    "display: none; "
-  );
+  sectionMessage.setAttribute("style", "display: none; ");
 });
 btnFlowersC.addEventListener("click", () => {
-  flowers.setAttribute(
-    "style",
-    "display: flex; "
-  );
+  flowers.setAttribute("style", "display: flex; ");
   textCaminoHappy.setAttribute(
     "style",
-    "display: flex; animation: aparicion 3s ease-in-out"  
-  )
+    "display: flex; animation: aparicion 3s ease-in-out"
+  );
   audio.pause();
   audioF.pause();
   btnAudioHappy.click();
-  sectionMessage.setAttribute(
-    "style",
-    "display: none; "
-  );
+  sectionMessage.setAttribute("style", "display: none; ");
   setTimeout(() => {
     imgRamo.setAttribute(
       "style",
-      "display: flex; animation: aparicion 3s ease-in-out"  
-    ) 
-    
-  }, 10000)
+      "display: flex; animation: aparicion 3s ease-in-out"
+    );
+  }, 10000);
 });
 
 btnNextSad.addEventListener("click", () => {
-  flowers.setAttribute(
-    "style",
-    "display: flex; "
-  );
+  flowers.setAttribute("style", "display: flex; ");
   textCaminoSad.setAttribute(
     "style",
-    "display: flex; animation: aparicion 3s ease-in-out"  
-  )
+    "display: flex; animation: aparicion 3s ease-in-out"
+  );
   audio.pause();
   audioF.pause();
   btnAudioHappy.click();
-  onflower.setAttribute(
-    "style",
-    "display: none; "
-  );
-setTimeout(() => {
-  imgRamo.setAttribute(
-    "style",
-    "display: flex; animation: aparicion 3s ease-in-out"  
-  )
-}, 10000)
+  onflower.setAttribute("style", "display: none; ");
+  setTimeout(() => {
+    imgRamo.setAttribute(
+      "style",
+      "display: flex; animation: aparicion 3s ease-in-out"
+    );
+  }, 10000);
 });
 
 //
