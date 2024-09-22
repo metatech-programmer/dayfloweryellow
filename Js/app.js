@@ -59,11 +59,6 @@ sectionMessage.addEventListener("click", () => {
     console.error("Error al reproducir el audio:", error);
   });
 });
-sectionMessage.addEventListener("mouseover", () => {
-  audioT.play().catch((error) => {
-    console.error("Error al reproducir el audio:", error);
-  });
-});
 window.addEventListener("load", () => {
   btnAudioOnes.click();
   textCaminoHappy.setAttribute("style", "display: none;");
