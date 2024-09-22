@@ -44,7 +44,7 @@ btnAudioOne.addEventListener("click", () => {
   audioT.pause();
 });
 btnAudioOnes.addEventListener("click", () => {
-  audioT.play().catch((error) => {
+  fadeOut(audioT, 2000).catch((error) => {
     console.error("Error al reproducir el audio:", error);
   });
 });
@@ -115,3 +115,31 @@ btnNextSad.addEventListener("click", () => {
 });
 
 //
+function fadeOut(audio, duration) {
+  let volume = 1; // Volumen inicial
+  const interval = 50; // Intervalo en milisegundos
+  const fadeOutInterval = setInterval(() => {
+    volume -= interval / duration;
+    if (volume <= 0) {
+      volume = 0;
+      audio.pause();
+      clearInterval(fadeOutInterval);
+    }
+    audio.volume = volume;
+  }, interval);
+}
+
+function fadeIn(audio, duration) {
+  let volume = 0; // Volumen inicial
+  audio.volume = volume; // Asegúrate de que el volumen comience en 0
+  fadeOut(audio, 2000);
+  const interval = 50; // Intervalo en milisegundos
+  const fadeInInterval = setInterval(() => {
+    volume += interval / duration;
+    if (volume >= 1) {
+      volume = 1;
+      clearInterval(fadeInInterval);
+    }
+    audio.volume = volume;
+  }, interval);
+}
