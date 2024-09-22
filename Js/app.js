@@ -2,11 +2,35 @@ const sectionButtons = document.querySelector(".buttons");
 const btnaudio = document.querySelector(".audio");
 const btnAudioOne = document.querySelector(".audio_one");
 const btnAudioOnes = document.querySelector(".audio_ones");
+const btnAudioHappy = document.querySelector(".audio_F");
 const audio = document.querySelector(".audioR");
 const audioT = document.querySelector(".audioT");
+const audioF = document.querySelector(".audioF");
 const onflower = document.querySelector(".oneflower");
+const flowers = document.querySelector(".flowers");
 const sectionMessage = document.querySelector(".message");
 const btnOneFlower = document.querySelector("#oneFlower");
+const btnFlowersC = document.querySelector("#flowersC");
+const happyFlowers = document.querySelectorAll(".happyFlowers");
+const btnNextSad = document.querySelector(".btnNextSad")
+const textCaminoSad = document.querySelector(".camino_sad")
+const textCaminoHappy = document.querySelector(".camino_happy")
+const imgRamo = document.querySelector(".ramoHappy")
+
+for (let i = 0; i < 86; i++) {
+  const img = document.createElement("img");
+  img.setAttribute("src", "/assets/happy.webp");
+  img.setAttribute("alt", "happy");
+  img.setAttribute("class", "happyFlowers");
+  flowers.append(img);
+
+  img.setAttribute(
+    "style",
+    `position: absolute; width:${Math.floor(Math.random() * 300)}px; bottom:${Math.floor(Math.random() * 50) + 1}px; right:${Math.floor(Math.random() * 100) + 1}%; left:${(Math.floor(
+      Math.random() * 100)+1
+    )}%;`
+  );
+}
 
 btnaudio.addEventListener("click", () => {
   audio.play();
@@ -18,10 +42,15 @@ btnAudioOne.addEventListener("click", () => {
 btnAudioOnes.addEventListener("click", () => {
   audioT.play();
 });
+btnAudioHappy.addEventListener("click", () => {
+  audioF.play();
+});
+
 
 window.addEventListener("load", () => {
-  btnAudioOnes.click(); 
+  btnAudioOnes.click();
 });
+
 
 setTimeout(() => {
   sectionButtons.setAttribute(
@@ -39,8 +68,56 @@ btnOneFlower.addEventListener("click", () => {
   btnaudio.click();
   sectionMessage.setAttribute(
     "style",
-    "display: none; animation: animationBacground 20s forwards"
+    "display: none; "
   );
+});
+btnFlowersC.addEventListener("click", () => {
+  flowers.setAttribute(
+    "style",
+    "display: flex; "
+  );
+  textCaminoHappy.setAttribute(
+    "style",
+    "display: flex; animation: aparicion 3s ease-in-out"  
+  )
+  audio.pause();
+  audioF.pause();
+  btnAudioHappy.click();
+  sectionMessage.setAttribute(
+    "style",
+    "display: none; "
+  );
+  setTimeout(() => {
+    imgRamo.setAttribute(
+      "style",
+      "display: flex; animation: aparicion 3s ease-in-out"  
+    ) 
+    
+  }, 10000)
+});
+
+btnNextSad.addEventListener("click", () => {
+  flowers.setAttribute(
+    "style",
+    "display: flex; "
+  );
+  textCaminoSad.setAttribute(
+    "style",
+    "display: flex; animation: aparicion 3s ease-in-out"  
+  )
+  audio.pause();
+  audioF.pause();
+  btnAudioHappy.click();
+  onflower.setAttribute(
+    "style",
+    "display: none; "
+  );
+setTimeout(() => {
+  imgRamo.setAttribute(
+    "style",
+    "display: flex; animation: aparicion 3s ease-in-out"  
+  )
+}, 10000)
 });
 
 //
