@@ -54,11 +54,6 @@ btnAudioHappy.addEventListener("click", () => {
   });
 });
 
-sectionMessage.addEventListener("click", () => {
-  audioT.play().catch((error) => {
-    console.error("Error al reproducir el audio:", error);
-  });
-});
 window.addEventListener("load", () => {
   btnAudioOnes.click();
   textCaminoHappy.setAttribute("style", "display: none;");
