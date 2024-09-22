@@ -35,7 +35,7 @@ for (let i = 0; i < 86; i++) {
 }
 
 btnaudio.addEventListener("click", () => {
-  fadeOut(audio, 2000).catch((error) => {
+  fadeIn(audio, 2000).catch((error) => {
     console.error("Error al reproducir el audio:", error);
   });
 });
@@ -44,7 +44,7 @@ btnAudioOne.addEventListener("click", () => {
   audioT.pause();
 });
 btnAudioOnes.addEventListener("click", () => {
-  fadeOut(audioT, 2000).catch((error) => {
+  fadeIn(audioT, 2000).catch((error) => {
     console.error("Error al reproducir el audio:", error);
   });
 });
