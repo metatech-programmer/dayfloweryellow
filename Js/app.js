@@ -35,7 +35,7 @@ for (let i = 0; i < 86; i++) {
 }
 
 btnaudio.addEventListener("click", () => {
-  audio.play().catch((error) => {
+  fadeOut(audio, 2000).catch((error) => {
     console.error("Error al reproducir el audio:", error);
   });
 });
@@ -132,7 +132,7 @@ function fadeOut(audio, duration) {
 function fadeIn(audio, duration) {
   let volume = 0; // Volumen inicial
   audio.volume = volume; // Asegúrate de que el volumen comience en 0
-  fadeOut(audio, 2000);
+  audio.play();
   const interval = 50; // Intervalo en milisegundos
   const fadeInInterval = setInterval(() => {
     volume += interval / duration;
