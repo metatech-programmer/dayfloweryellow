@@ -35,24 +35,34 @@ for (let i = 0; i < 86; i++) {
 }
 
 btnaudio.addEventListener("click", () => {
-  audio.play();
+  audio.play().catch((error) => {
+    console.error("Error al reproducir el audio:", error);
+  });
 });
 
 btnAudioOne.addEventListener("click", () => {
   audioT.pause();
 });
 btnAudioOnes.addEventListener("click", () => {
-  audioT.play();
+  audioT.play().catch((error) => {
+    console.error("Error al reproducir el audio:", error);
+  });
 });
 btnAudioHappy.addEventListener("click", () => {
-  audioF.play();
+  audioF.play().catch((error) => {
+    console.error("Error al reproducir el audio:", error);
+  });
 });
 
 sectionMessage.addEventListener("click", () => {
-  audioT.play();
+  audioT.play().catch((error) => {
+    console.error("Error al reproducir el audio:", error);
+  });
 });
 sectionMessage.addEventListener("mouseover", () => {
-  audioT.play();
+  audioT.play().catch((error) => {
+    console.error("Error al reproducir el audio:", error);
+  });
 });
 window.addEventListener("load", () => {
   btnAudioOnes.click();
