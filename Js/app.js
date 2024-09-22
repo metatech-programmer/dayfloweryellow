@@ -35,7 +35,7 @@ for (let i = 0; i < 86; i++) {
 }
 
 btnaudio.addEventListener("click", () => {
-  fadeIn(audio, 2000).catch((error) => {
+  fadeIn(audio, 5000).catch((error) => {
     console.error("Error al reproducir el audio:", error);
   });
 });
@@ -44,12 +44,12 @@ btnAudioOne.addEventListener("click", () => {
   audioT.pause();
 });
 btnAudioOnes.addEventListener("click", () => {
-  fadeIn(audioT, 2000).catch((error) => {
+  audioT.play().catch((error) => {
     console.error("Error al reproducir el audio:", error);
   });
 });
 btnAudioHappy.addEventListener("click", () => {
-  audioF.play().catch((error) => {
+  fadeIn(audioF, 3000).catch((error) => {
     console.error("Error al reproducir el audio:", error);
   });
 });
@@ -115,19 +115,6 @@ btnNextSad.addEventListener("click", () => {
 });
 
 //
-function fadeOut(audio, duration) {
-  let volume = 1; // Volumen inicial
-  const interval = 50; // Intervalo en milisegundos
-  const fadeOutInterval = setInterval(() => {
-    volume -= interval / duration;
-    if (volume <= 0) {
-      volume = 0;
-      audio.pause();
-      clearInterval(fadeOutInterval);
-    }
-    audio.volume = volume;
-  }, interval);
-}
 
 function fadeIn(audio, duration) {
   let volume = 0; // Volumen inicial
