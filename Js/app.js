@@ -49,6 +49,10 @@ btnAudioHappy.addEventListener("click", () => {
 
 window.addEventListener("load", () => {
   btnAudioOnes.click();
+  textCaminoHappy.setAttribute("style", "display: none;")
+  textCaminoSad.setAttribute("style", "display: none;")
+  imgRamo.setAttribute("style", "display: none;")
+  audioF.pause();
 });
 
 
